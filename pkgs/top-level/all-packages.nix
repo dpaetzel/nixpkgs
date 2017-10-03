@@ -807,6 +807,8 @@ with pkgs;
 
   ccnet = callPackage ../tools/networking/ccnet { };
 
+  cewe-fotobuch = callPackage ../applications/graphics/cewe-fotobuch { };
+
   cfdyndns = callPackage ../applications/networking/dyndns/cfdyndns { };
 
   ckbcomp = callPackage ../tools/X11/ckbcomp { };
