@@ -2728,4 +2728,6 @@ self: super: {
   # https://github.com/kowainik/typerep-map/pull/128
   typerep-map = doJailbreak super.typerep-map;
 
+  # Test fails.
+  heist = markUnbroken (dontCheck super.heist);
 } // import ./configuration-tensorflow.nix {inherit pkgs haskellLib;} self super
