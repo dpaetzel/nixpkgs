@@ -32,10 +32,10 @@ stdenv.mkDerivation rec {
     sed -i "$out/bin/clipctl" -e 's,clipmenud\$,\.clipmenud-wrapped\$,'
 
     wrapProgram "$out/bin/clipmenu" \
-      --prefix PATH : "${lib.makeBinPath [ xsel ]}"
+      --prefix PATH : "${lib.makeBinPath [ xsel ]}:$out/bin"
 
     wrapProgram "$out/bin/clipmenud" \
-      --set PATH "${lib.makeBinPath [ clipnotify coreutils gawk util-linux xdotool xsel ]}"
+      --set PATH "${lib.makeBinPath [ clipnotify coreutils gawk util-linux xdotool xsel ]}:$out/bin"
   '';
 
   meta = with lib; {
