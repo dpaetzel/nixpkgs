@@ -11,13 +11,13 @@
 }:
 stdenv.mkDerivation rec {
   pname = "clipmenu";
-  version = "6.2.0";
+  version = "87e164-dev";
 
   src = fetchFromGitHub {
     owner  = "cdown";
     repo   = "clipmenu";
-    rev    = version;
-    sha256 = "sha256-nvctEwyho6kl4+NXi76jT2kG7nchmI2a7mgxlgjXA5A=";
+    rev = "87e1641b50ff0cc57ca850c34fe4d4c8cbb60bb0";
+    sha256 = "sha256-35HA7ZxRLuZsgG4/NHG7qarSgEWZ8rwrlvXDEm+B9ws=";
   };
 
   postPatch = ''
