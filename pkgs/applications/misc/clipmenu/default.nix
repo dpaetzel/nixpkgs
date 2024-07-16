@@ -20,6 +20,8 @@ stdenv.mkDerivation rec {
     sha256 = "sha256-35HA7ZxRLuZsgG4/NHG7qarSgEWZ8rwrlvXDEm+B9ws=";
   };
 
+  # Note that this brings with it its own systemd service which is not used (we
+  # write our own NixOS module that sets up a service).
   postPatch = ''
     sed -i init/clipmenud.service \
       -e "s,/usr/bin,$out/bin,"

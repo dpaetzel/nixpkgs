@@ -38,6 +38,13 @@ in {
       wantedBy = [ "graphical-session.target" ];
       after    = [ "graphical-session.target" ];
       serviceConfig.ExecStart = "${cfg.package}/bin/clipmenud";
+      # The example service file supplied with clipmenu says “We don't need to
+      # do any clean up, so if something hangs (borked xclip, etc), it's going
+      # to stay that way. Just forcefully kill and get it over with.” and sets
+      # this:
+      serviceConfig.TimeoutStopSec = "2";
+      serviceConfig.Restart = "always";
+      serviceConfig.RestartSec = "500ms";
     };
 
     environment.systemPackages = [ cfg.package ];
